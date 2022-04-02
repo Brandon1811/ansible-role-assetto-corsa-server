@@ -1,0 +1,7 @@
+---
+# tasks file for setting up an assetto server on ubuntu20.04
+- include: harden.yml
+  become: true
+  apply tags,become
+  when: harden_os
+  tags: harden
