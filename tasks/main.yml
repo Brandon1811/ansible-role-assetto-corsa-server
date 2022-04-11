@@ -11,3 +11,9 @@
 #  apply tags,become
 #  when: harden_os
 #  tags: harden
+
+- include: assetto.yml
+#  become: true
+#  apply tags,become
+#  when: harden_os
+#  tags: harden
