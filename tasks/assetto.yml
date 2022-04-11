@@ -101,7 +101,7 @@
 
 - name: update permissions
   file:
-  path: /home/{{ main_user }}
+    path: /home/{{ main_user }}
     state: directory
     recurse: yes
     owner: "{{ main_user }}"

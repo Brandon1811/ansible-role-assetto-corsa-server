@@ -7,4 +7,3 @@
 
 - name: 'Include fail2ban/install using apt'
   apt: name=fail2ban state=latest update_cache=yes force_apt_get=yes
-	
