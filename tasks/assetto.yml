@@ -89,15 +89,25 @@
   tags:
     - bring-down
 
+- local_action: stat path=./content/cars.zip
+  register: cars_zip
+  become: no
+
+- local_action: stat path=./content/tracks.zip
+  register: tracks_zip
+  become: no
+
 - name: Extract cars into /home/{{ main_user }}/server-manager/server-install/content/cars
   ansible.builtin.unarchive:
     src: content/cars.zip
     dest: /home/{{ main_user }}/server-manager/server-install/content/cars
+  when: cars_zip.stat.exists
 
 - name: Extract tracks into /home/{{ main_user }}/server-manager/server-install/content/tracks
   ansible.builtin.unarchive:
     src: content/tracks.zip
     dest: /home/{{ main_user }}/server-manager/server-install/content/tracks
+  when: tracks_zip.stat.exists
 
 - name: update permissions
   file:
