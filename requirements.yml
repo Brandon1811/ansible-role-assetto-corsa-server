@@ -6,7 +6,6 @@ roles:
   - src: https://github.com/siw36/ansible-steamcmd.git
   - src: https://github.com/geerlingguy/ansible-role-docker
   - src: https://github.com/geerlingguy/ansible-role-pip
-  - src: https://github.com/Brandon1811/ansible-role-assetto-corsa-server
 
 collections:
   - name: community.docker
